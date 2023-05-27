@@ -36,8 +36,9 @@ class SearchWidget extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 12,),
-          if (!noFilterButton) const BtnNeumorphism(
-            child: Padding(
+          if (!noFilterButton) BtnNeumorphism(
+            onTap: () {},
+            child: const Padding(
               padding: EdgeInsets.all(8.0),
               child: Icon(CupertinoIcons.square_grid_2x2, color: Colors.white70),
             ),

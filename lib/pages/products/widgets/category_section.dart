@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import '../../../core/widgets/cached_image.dart';
 import '../../../core/widgets/ficon_button.dart';
+import '../../../core/widgets/product_price.dart';
 
 class CategorySection extends StatelessWidget {
   final String categoryName;
@@ -108,7 +109,7 @@ class CategorySection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              _buildProductPrice(prod.price, prod.discountPrice),
+              ProductPrice(price: prod.price, discountPrice: prod.discountPrice),
               FIconButton(
                 onPressed: () {},
                 backgroundColor: Colors.white,
@@ -120,29 +121,6 @@ class CategorySection extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildProductPrice(double price, double? discountPrice) {
-    return discountPrice == null
-        ? Text(
-            "R\$$price",
-            style: minStyle,
-          )
-        : Text.rich(TextSpan(
-            children: <TextSpan>[
-              TextSpan(
-                text: "R\$$price",
-                style: minStyle.copyWith(
-                  color: Colors.grey,
-                  decoration: TextDecoration.lineThrough,
-                ),
-              ),
-              TextSpan(
-                text: "  R\$$discountPrice",
-                style: minBoldStyle,
-              ),
-            ],
-          ));
   }
 
   @override

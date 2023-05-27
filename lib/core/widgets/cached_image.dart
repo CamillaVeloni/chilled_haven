@@ -9,9 +9,6 @@ class CachedImage extends StatelessWidget {
   final BorderRadius? borderRadius;
   const CachedImage({Key? key, required this.image, this.width, this.height, this.borderRadius, this.isCircular = false}) : super(key: key);
 
-  // width: Get.width * 0.15,
-  // height: Get.width * 0.15,
-
   Widget _clipImage({required Widget child}) {
     return isCircular
         ? ClipOval(child: child,)
