@@ -1,16 +1,39 @@
-# chilled_haven
+# Chilled Haven - Paraiso Congelado
 
-A new Flutter project.
+<div align="center">
+  An application made with flutter. Application for an ice cream shop - Uma aplicação feita com o flutter. Aplicativo para uma sorveteria. 
+</div>
 
-## Getting Started
+<br>
+<table align="center">
+    <tr>
+        <th style="text-align:center">
+            <a href="https://www.instagram.com/camillaveloni/">
+                <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Instagram.svg?raw=true" width="30">
+            </a>
+        </th>
+        <th style="text-align:center">
+            <a href="#">
+                <img src="https://github.com/gauravghongde/social-icons/blob/master/SVG/Color/Gmail.svg?raw=true" width="30">
+            </a>
+        </th>
+    </tr>
+</table>
+<br>
 
-This project is a starting point for a Flutter application.
+## Requirements  
 
-A few resources to get you started if this is your first Flutter project:
+### FIRST
+```
+  flutter clean
+```
+### CHANGE IP
+``` 
+  lib/core/api/api_constants.dart
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Backend [NodeJs]
+- Ainda para upar
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshot
+
