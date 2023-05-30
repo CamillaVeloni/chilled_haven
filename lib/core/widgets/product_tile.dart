@@ -13,7 +13,8 @@ class ProductTile extends StatelessWidget {
   final String category;
   final String imageUrl;
   final Function() onTap;
-  const ProductTile({Key? key, required this.name, required this.price, required this.imageUrl, required this.category, required this.onTap}) : super(key: key);
+  final Function() onAddTap;
+  const ProductTile({Key? key, required this.name, required this.price, required this.imageUrl, required this.category, required this.onTap, required this.onAddTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,28 +50,31 @@ class ProductTile extends StatelessWidget {
                 Positioned(
                   bottom: 0,
                   right: 0,
-                  child: Container(
-                    padding: const EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      borderRadius: const BorderRadius.only(bottomRight: Radius.circular(12)),
-                      color: Colors.red[300],
-                      gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                          colors: [
-                            Colors.red[100]!,
-                            Colors.red[200]!,
-                            Colors.red[300]!,
-                            Colors.red[400]!,
-                          ],
-                          stops: const [
-                            0.1,
-                            0.3,
-                            0.8,
-                            1
-                          ]),
+                  child: GestureDetector(
+                    onTap: onAddTap,
+                    child: Container(
+                      padding: const EdgeInsets.all(2),
+                      decoration: BoxDecoration(
+                        borderRadius: const BorderRadius.only(bottomRight: Radius.circular(12)),
+                        color: Colors.red[300],
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment.bottomRight,
+                            colors: [
+                              Colors.red[100]!,
+                              Colors.red[200]!,
+                              Colors.red[300]!,
+                              Colors.red[400]!,
+                            ],
+                            stops: const [
+                              0.1,
+                              0.3,
+                              0.8,
+                              1
+                            ]),
+                      ),
+                      child: const Icon(CupertinoIcons.add, color: Colors.white, size: 20),
                     ),
-                    child: const Icon(CupertinoIcons.add, color: Colors.white, size: 20),
                   ),
                 ),
               ],

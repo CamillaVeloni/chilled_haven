@@ -14,7 +14,6 @@ void main() async {
 
   await Hive.initFlutter();
   InitialBindings().dependencies();
-
   runApp(const MyApp());
 }
 

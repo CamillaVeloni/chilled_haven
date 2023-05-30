@@ -1,5 +1,6 @@
 import 'package:chilled_haven/core/api/api_util.dart';
 import 'package:chilled_haven/core/routers/constants_routers.dart';
+import 'package:chilled_haven/pages/cart/controller.dart';
 import 'package:get/get.dart';
 
 import '../../core/models/product_rest_model.dart';
@@ -26,15 +27,17 @@ class HomeController extends GetxController {
     return [];
   }
 
-  void changeViewedProducts({bool? isHotSale, String? category}) async {
+  Future<void> changeViewedProducts({bool? isHotSale, String? category}) async {
     viewedProducts.assignAll(await getProducts(isHotSale: isHotSale, category: category));
   }
 
   void _initProducts() async {
-    changeViewedProducts(isHotSale: true); // show first the products in hot sale
+    await changeViewedProducts(isHotSale: true); // show first the products in hot sale
+
+    // CartController.to.dummyData();
   }
 
-  void navigateToCart() {}
+  void navigateToCart() => Get.toNamed(CART_PAGE);
   void navigateToProducts() => Get.toNamed(PRODUCTS_PAGE);
   void navigateToDetailPage(ProductRestModel prod) => Get.toNamed(DETAIL_PAGE, arguments: prod);
 }

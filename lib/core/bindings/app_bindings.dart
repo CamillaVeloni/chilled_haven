@@ -13,6 +13,7 @@ class HomeBinding implements Bindings {
   @override
   void dependencies() {
     Get.lazyPut(() => HomeController());
+    Get.put(CartController(), permanent: true);
   }
 }
 
@@ -30,9 +31,9 @@ class DetailsBinding implements Bindings {
   }
 }
 
-class CartBinding implements Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut(() => CartController());
-  }
-}
+// class CartBinding implements Bindings {
+//   @override
+//   void dependencies() {
+//     Get.lazyPut(() => CartController());
+//   }
+// }

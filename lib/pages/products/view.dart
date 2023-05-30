@@ -20,6 +20,7 @@ class ProductsPage extends GetView<ProductsController> {
         scrollController: sliverController.scrollController,
         expandedHeight: sliverController.expandedHeight,
         collapsedHeight: sliverController.collapsedHeight,
+        imageAsset: sliverController.imageAsset,
         isCollapsed: sliverController.isCollapsed,
         onCollapsed: sliverController.onCollapsed,
         tabController: sliverController.tabController,
@@ -43,11 +44,13 @@ class ProductsPage extends GetView<ProductsController> {
         key: ValueKey(index),
         index: index,
         controller: SliverScrollController.to.scrollController,
-        child: Obx(() => CategorySection(
-          categoryName: categoryMenu.capitalizeFirst!,
-          isFirst: index == 0,
-          categoryProduct: controller.categoryProducts(categoryMenu),
-        ),),
+        child: Obx(
+          () => CategorySection(
+            categoryName: categoryMenu.capitalizeFirst!,
+            isFirst: index == 0,
+            categoryProduct: controller.categoryProducts(categoryMenu),
+          ),
+        ),
       ),
     );
   }

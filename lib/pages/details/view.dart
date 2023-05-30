@@ -49,14 +49,32 @@ class DetailsPage extends GetView<DetailsController> {
                       ],
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: QuantityButton(
-                      onAdd: () {},
-                      onSubtract: () {},
-                      quantity: '1',
+                  Obx(
+                    () => AnimatedOpacity(
+                      opacity: controller.isItemInCart ? 1 : 0,
+                      curve: Curves.bounceOut,
+                      duration: const Duration(milliseconds: 600),
+                      child: Align(
+                        alignment: Alignment.bottomCenter,
+                        child: QuantityButton(
+                          onAdd: controller.increaseQuantityToCart,
+                          onSubtract: controller.decreaseQuantityToCart,
+                          quantity: '${controller.itemQuantity}',
+                        ),
+                      ),
                     ),
-                  ),
+                  )
+                  // Visibility(
+                  //   visible: controller.isItemInCart,
+                  //   child: Align(
+                  //     alignment: Alignment.bottomCenter,
+                  //     child: QuantityButton(
+                  //       onAdd: () {},
+                  //       onSubtract: () {},
+                  //       quantity: '1',
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
@@ -90,15 +108,20 @@ class DetailsPage extends GetView<DetailsController> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ProductPrice(
-                            price: controller.product.price,
-                            discountPrice: controller.product.discountPrice,
-                            hasSpace: true),
+                          price: controller.product.price,
+                          discountPrice: controller.product.discountPrice,
+                          showDiscountPrice:
+                              controller.product.discountPrice != null,
+                          hasSpace: true,
+                        ),
                         BtnNeumorphism(
-                          onTap: () {},
+                          onTap: controller.addItemToCart,
                           btnBorderRadius: BorderRadius.circular(24),
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text('Adicionar no carrinho', style: minBoldStyle.copyWith(color: Colors.white)),
+                            child: Text('Adicionar no carrinho',
+                                style:
+                                    minBoldStyle.copyWith(color: Colors.white)),
                           ),
                         )
                       ],

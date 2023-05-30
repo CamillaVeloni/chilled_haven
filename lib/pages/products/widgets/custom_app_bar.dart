@@ -1,17 +1,21 @@
 import 'dart:ui';
 
 import 'package:chilled_haven/core/theme/custom_text_style.dart';
+import 'package:chilled_haven/core/widgets/logo_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import '../../../core/widgets/cart_button.dart';
 import '../../../core/widgets/ficon_button.dart';
 import '../../home/widgets/search_widget.dart';
 
 class CustomAppBar extends SliverAppBar {
   final Set<Map<String, String>> data;
   final BuildContext context;
+  final Image imageAsset;
   final RxBool isCollapsed;
   @override
   final double expandedHeight;
@@ -22,18 +26,19 @@ class CustomAppBar extends SliverAppBar {
   final void Function(bool isCollapsed) onCollapsed;
   final void Function(int index) onTap;
 
-  CustomAppBar({
-    super.key,
-    required this.data,
-    required this.context,
-    required this.isCollapsed,
-    required this.expandedHeight,
-    required this.collapsedHeight,
-    required this.scrollController,
-    required this.tabController,
-    required this.onCollapsed,
-    required this.onTap
-  }) : super(elevation: 0, pinned: true, forceElevated: false);
+  CustomAppBar(
+      {super.key,
+      required this.data,
+      required this.context,
+      required this.isCollapsed,
+      required this.expandedHeight,
+      required this.imageAsset,
+      required this.collapsedHeight,
+      required this.scrollController,
+      required this.tabController,
+      required this.onCollapsed,
+      required this.onTap})
+      : super(elevation: 0, pinned: true, forceElevated: false);
 
   @override
   Color? get backgroundColor => Colors.grey.shade100;
@@ -62,11 +67,7 @@ class CustomAppBar extends SliverAppBar {
           ),
         ),
       ),
-      FIconButton(
-        backgroundColor: Colors.white,
-        onPressed: () {},
-        icon: const Icon(CupertinoIcons.cart),
-      ),
+      const CartButton(),
     ];
   }
 
@@ -79,7 +80,7 @@ class CustomAppBar extends SliverAppBar {
         child: Center(
           child: Text(
             'Paraiso Congelado',
-            style: detailTitleText,
+            style: GoogleFonts.pacifico(textStyle: detailTitleText),
           ),
         ),
       ),
@@ -133,9 +134,20 @@ class CustomAppBar extends SliverAppBar {
           background: Stack(
             children: [
               Positioned.fill(
-                child: Image.asset(
-                  'assets/images/background.png',
-                  fit: BoxFit.cover,
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.blue[400]!,
+                        Colors.blue[500]!,
+                        Colors.blue[700]!,
+                        Colors.blue[800]!,
+                      ],
+                      stops: const [0.1, 0.3, 0.8, 1],
+                    ),
+                  ),
                 ),
               ),
               const Positioned(

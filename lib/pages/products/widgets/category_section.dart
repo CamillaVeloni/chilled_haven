@@ -1,6 +1,7 @@
 import 'package:chilled_haven/core/models/product_rest_model.dart';
 import 'package:chilled_haven/core/routers/constants_routers.dart';
 import 'package:chilled_haven/core/theme/custom_text_style.dart';
+import 'package:chilled_haven/core/widgets/card_item.dart';
 import 'package:chilled_haven/pages/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -22,19 +23,14 @@ class CategorySection extends StatelessWidget {
     required this.categoryName,
   }) : super(key: key);
 
-  Widget get _getTileHeader => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          if (!isFirst) const Divider(),
-          const SizedBox(height: 12),
-          Text(
-            categoryName,
-            style: detailTitleText,
-          ),
-          const SizedBox(height: 12),
-          const Divider(),
-          const SizedBox(height: 5),
-        ],
+  Widget get _getTileHeader => Container(
+        padding: EdgeInsets.symmetric(
+          vertical: isFirst ? 24: 12,
+        ),
+        child: Text(
+          categoryName,
+          style: headerStyle,
+        ),
       );
 
   Widget get _getMenuTile => Column(
@@ -59,21 +55,9 @@ class CategorySection extends StatelessWidget {
   }) {
     return InkWell(
       onTap: onTap,
-      child: Container(
+      child: CardItem(
         margin: const EdgeInsets.all(6),
         padding: const EdgeInsets.symmetric(vertical: 5),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(12),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade200,
-              offset: const Offset(4.0, 4.0),
-              blurRadius: 10.0,
-              spreadRadius: 1.0,
-            ),
-          ],
-        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -109,9 +93,13 @@ class CategorySection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              ProductPrice(price: prod.price, discountPrice: prod.discountPrice),
+              ProductPrice(
+                price: prod.price,
+                discountPrice: prod.discountPrice,
+                showDiscountPrice: prod.discountPrice != null,
+              ),
               FIconButton(
-                onPressed: () {},
+                onPressed: () => CartController.to.addProductToCart(prod),
                 backgroundColor: Colors.white,
                 icon: const Icon(CupertinoIcons.add),
                 padding: EdgeInsets.zero,

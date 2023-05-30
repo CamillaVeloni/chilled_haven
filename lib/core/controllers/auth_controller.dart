@@ -1,3 +1,4 @@
+import 'package:chilled_haven/core/models/address_rest_model.dart';
 import 'package:chilled_haven/core/storages/token_storage.dart';
 import 'package:get/get.dart';
 
@@ -44,6 +45,8 @@ class AuthController extends GetxController {
   void navigateToLogin() => Get.offAllNamed(AUTHENTICATION_PAGE);
   void navigateToHome() => Get.offAllNamed(HOME_PAGE);
 
-  String get firstName => _user.value!.fullName;
   bool isLoggedIn() => _user.value != null;
+
+  String get firstName => _user.value!.fullName.split(' ')[0];
+  AddressRestModel get address => _user.value!.defaultAddress;
 }

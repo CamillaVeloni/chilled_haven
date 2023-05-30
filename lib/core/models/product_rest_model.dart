@@ -4,6 +4,7 @@ part 'product_rest_model.g.dart';
 
 @JsonSerializable()
 class ProductRestModel {
+  String id;
   String name;
   String description;
   double price;
@@ -13,7 +14,8 @@ class ProductRestModel {
   String category;
 
   ProductRestModel(
-      {required this.name,
+      {required this.id,
+        required this.name,
         required this.description,
         required this.price,
          this.discountPrice,

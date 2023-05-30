@@ -1,3 +1,4 @@
+import 'package:chilled_haven/pages/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_getx_widget.dart';
 
@@ -42,6 +43,7 @@ class ProductsList extends StatelessWidget {
                   price: 'R\$${prod.price}',
                   category: prod.category,
                   onTap: () => controller.navigateToDetailPage(prod),
+                  onAddTap: () => CartController.to.addProductToCart(prod),
                 );
               },
             ),

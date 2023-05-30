@@ -5,6 +5,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../core/controllers/auth_controller.dart';
+import '../../core/widgets/cart_button.dart';
+import '../../core/widgets/ficon_button.dart';
 import 'widgets/search_widget.dart';
 import '../../core/theme/custom_text_style.dart';
 import 'controller.dart';
@@ -31,21 +34,15 @@ class HomePage extends GetView<HomeController> {
                         text: 'Olá, ',
                         style:
                             headerNormalStyle.copyWith(color: Colors.black87),
-                        children: const <TextSpan>[
+                        children: <TextSpan>[
                           TextSpan(
-                              text: 'Camilla!',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                            text: '${AuthController.to.firstName}!',
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
-                    InkWell(
-                      onTap: controller.navigateToCart,
-                      borderRadius: BorderRadius.circular(12),
-                      child: const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 6, horizontal: 2),
-                        child: Icon(CupertinoIcons.cart),
-                      ),
-                    ),
+                    const CartButton(),
                   ],
                 ),
                 const SizedBox(

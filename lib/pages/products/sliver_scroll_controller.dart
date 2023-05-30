@@ -19,11 +19,17 @@ class SliverScrollController extends GetxController with GetSingleTickerProvider
   final listViewKey = RectGetter.createGlobalKey();
   final itemKeys = <int, dynamic>{};
 
+  // image asset
+  late Image _imageAsset;
   // prevent animate when press on tab bar
   bool pauseRectGetterIndex = false;
 
+  Image get imageAsset => _imageAsset;
   @override
   void onInit() {
+    _imageAsset = Image.asset('assets/images/background.png', fit: BoxFit.cover,);
+    precacheImage(_imageAsset.image, Get.context!);
+
     tabController = TabController(length: CATEGORIES_DATA.length, vsync: this);
     scrollController = AutoScrollController();
     super.onInit();

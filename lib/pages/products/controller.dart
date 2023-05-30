@@ -1,10 +1,10 @@
-import 'package:chilled_haven/core/models/product_rest_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '/core/models/product_rest_model.dart';
 import '../home/controller.dart';
 
 class ProductsController extends GetxController {
-
   final _viewedProducts = <ProductRestModel>[].obs;
 
   List<ProductRestModel> get viewedProducts => _viewedProducts;
@@ -17,4 +17,8 @@ class ProductsController extends GetxController {
     super.onInit();
   }
 
+  @override
+  void onReady() {
+    super.onReady();
+  }
 }

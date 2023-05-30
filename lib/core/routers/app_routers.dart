@@ -31,7 +31,7 @@ class AppRouters {
         GetPage(
           name: CART_PAGE,
           page: () => const CartPage(),
-          binding: CartBinding(),
+          // binding: CartBinding(),
         ),
       ];
 }
