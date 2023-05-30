@@ -32,6 +32,18 @@
   lib/core/api/api_constants.dart
 ```
 
+### BANNERS DATA
+
+``` 
+  lib/core/data/banners_data.dart - The banners need to be on the internet you can also change the widget to AssetImage. I added the banners in assets/images.
+```
+
+### PRODUCTS DATA
+
+``` 
+  Products data is available in the backend repo.
+```
+
 # Backend [NodeJs]
 - Ainda para upar
 
