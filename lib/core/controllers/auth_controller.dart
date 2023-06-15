@@ -40,6 +40,9 @@ class AuthController extends GetxController {
     // add token
     await TokenStorage.saveUserToken(result);
 
+    // add user
+    _user.value = await ApiUtil.getUser();
+
     navigateToHome();
   }
 
