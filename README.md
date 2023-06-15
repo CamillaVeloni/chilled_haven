@@ -59,6 +59,10 @@
 ```
 
 ```
+  flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+
+```
   Change IP in: lib/core/api/api_constants.dart
 ```
 
