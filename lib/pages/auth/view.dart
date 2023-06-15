@@ -60,7 +60,7 @@ class LoginPage extends GetView<LoginController> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             LoginTextInput(
-                              controller: controller.emailController,
+                              controller: controller.nameController,
                               labelText: 'Digite seu nome completo',
                               required: controller.requirementRegister,
                             ),

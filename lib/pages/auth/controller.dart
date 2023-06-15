@@ -70,6 +70,7 @@ class LoginController extends GetxController {
     return UserRestModel(
       email: _emailController.text,
       password: _passwordController.text,
+      phone: _phoneController.text,
       fullName: _nameController.text,
       defaultAddress: AddressRestModel(
         zipCode: _zipCodeController.text,

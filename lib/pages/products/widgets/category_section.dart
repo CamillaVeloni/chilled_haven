@@ -1,5 +1,4 @@
 import 'package:chilled_haven/core/models/product_rest_model.dart';
-import 'package:chilled_haven/core/routers/constants_routers.dart';
 import 'package:chilled_haven/core/theme/custom_text_style.dart';
 import 'package:chilled_haven/core/widgets/card_item.dart';
 import 'package:chilled_haven/pages/index.dart';
@@ -57,7 +56,7 @@ class CategorySection extends StatelessWidget {
       onTap: onTap,
       child: CardItem(
         margin: const EdgeInsets.all(6),
-        padding: const EdgeInsets.symmetric(vertical: 5),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

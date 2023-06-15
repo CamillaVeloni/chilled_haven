@@ -20,6 +20,7 @@ class AuthController extends GetxController {
 
   void initAuth() async {
     await Future.delayed(const Duration(seconds: 2));
+
     _user.value = await ApiUtil.getUser();
     String? retrievedToken = '';
 

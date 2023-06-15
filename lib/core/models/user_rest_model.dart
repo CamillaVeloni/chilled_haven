@@ -9,12 +9,14 @@ class UserRestModel {
   String fullName;
   String email;
   String password;
+  String phone;
   AddressRestModel defaultAddress;
 
   UserRestModel(
       {required this.fullName,
         required this.email,
         required this.password,
+        required this.phone,
         required this.defaultAddress,
       });
 

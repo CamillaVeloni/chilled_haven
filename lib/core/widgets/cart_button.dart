@@ -10,9 +10,8 @@ class CartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  FIconButton(
-      backgroundColor: Colors.white,
       onPressed: HomeController.to.navigateToCart,
-      icon: const Icon(CupertinoIcons.cart),
+      icon: const Icon(CupertinoIcons.cart, color: Colors.black87,),
     );
   }
 }

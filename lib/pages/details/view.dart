@@ -38,13 +38,11 @@ class DetailsPage extends GetView<DetailsController> {
                       children: <Widget>[
                         FIconButton(
                           onPressed: Get.back,
-                          backgroundColor: Colors.white,
-                          icon: const Icon(CupertinoIcons.back),
+                          icon: const Icon(CupertinoIcons.back, color: Colors.black87),
                         ),
                         FIconButton(
                           onPressed: () {},
-                          backgroundColor: Colors.white,
-                          icon: const Icon(CupertinoIcons.heart),
+                          icon: const Icon(CupertinoIcons.heart, color: Colors.black87),
                         ),
                       ],
                     ),

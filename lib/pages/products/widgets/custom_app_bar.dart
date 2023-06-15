@@ -1,13 +1,12 @@
 import 'dart:ui';
 
-import 'package:chilled_haven/core/theme/custom_text_style.dart';
-import 'package:chilled_haven/core/widgets/logo_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_to_index/scroll_to_index.dart';
 
+import '/core/theme/custom_text_style.dart';
 import '../../../core/widgets/cart_button.dart';
 import '../../../core/widgets/ficon_button.dart';
 import '../../home/widgets/search_widget.dart';
@@ -48,8 +47,7 @@ class CustomAppBar extends SliverAppBar {
     return Center(
       child: FIconButton(
         onPressed: Get.back,
-        backgroundColor: Colors.white,
-        icon: const Icon(Icons.arrow_back_ios_new),
+        icon: const Icon(Icons.arrow_back_ios_new, color: Colors.black54),
       ),
     );
   }
@@ -61,9 +59,9 @@ class CustomAppBar extends SliverAppBar {
         () => Visibility(
           visible: !isCollapsed.value,
           child: FIconButton(
-            backgroundColor: Colors.white,
+            backgroundColor: Colors.black54,
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.search),
+            icon: const Icon(CupertinoIcons.search, color: Colors.white),
           ),
         ),
       ),
@@ -140,12 +138,11 @@ class CustomAppBar extends SliverAppBar {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Colors.blue[400]!,
-                        Colors.blue[500]!,
-                        Colors.blue[700]!,
-                        Colors.blue[800]!,
+                        Colors.lightBlue[50]!,
+                        Colors.lightBlue[100]!,
+                        Colors.lightBlue[200]!,
                       ],
-                      stops: const [0.1, 0.3, 0.8, 1],
+                      stops: const [0.1, 0.3, 1],
                     ),
                   ),
                 ),
