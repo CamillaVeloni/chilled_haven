@@ -86,7 +86,7 @@
 [insta-url]: https://www.instagram.com/camillaveloni/
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/camilla-cristina-lima-veloni-5021a320b/
-[product-screenshot]: images/screenshot.png
+[app-screenshot]: images/screenshot.png
 [Flutter.js]: https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white
 [Flutter-url]: https://flutter.dev/
 [MongoDB.js]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
